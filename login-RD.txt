@@ -1,0 +1,84 @@
+[student@workstation ~]$ oc login -u admin -p redhatocp https://api.ocp4.example.com:6443 --loglevel 7
+I0428 03:19:49.355321    2496 loader.go:373] Config loaded from file:  /home/student/.kube/config
+I0428 03:19:49.358572    2496 round_trippers.go:463] HEAD https://api.ocp4.example.com:6443/
+I0428 03:19:49.358600    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.415339    2496 round_trippers.go:574] Response Status: 403 Forbidden in 56 milliseconds
+I0428 03:19:49.415555    2496 round_trippers.go:463] GET https://api.ocp4.example.com:6443/version?timeout=32s
+I0428 03:19:49.415575    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.415589    2496 round_trippers.go:473]     Accept: application/json, */*
+I0428 03:19:49.415600    2496 round_trippers.go:473]     User-Agent: oc/4.14.0 (linux/amd64) kubernetes/9b1e0d2
+I0428 03:19:49.423306    2496 round_trippers.go:574] Response Status: 200 OK in 7 milliseconds
+I0428 03:19:49.423549    2496 loginoptions.go:312] GSSAPI Enabled
+I0428 03:19:49.423606    2496 round_trippers.go:463] GET https://api.ocp4.example.com:6443/.well-known/oauth-authorization-server
+I0428 03:19:49.423618    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.423626    2496 round_trippers.go:473]     X-Csrf-Token: 1
+I0428 03:19:49.436604    2496 round_trippers.go:574] Response Status: 200 OK in 12 milliseconds
+I0428 03:19:49.455632    2496 request_token.go:568] using system roots as no error was encountered
+I0428 03:19:49.455783    2496 round_trippers.go:463] GET https://oauth-openshift.apps.ocp4.example.com/oauth/authorize?client_id=openshift-challenging-client&code_challenge=95PWiOsL3yGtVgAsQ3Tev00_UaVw4zmM3VWBjYV2h98&code_challenge_method=S256&redirect_uri=https%3A%2F%2Foauth-openshift.apps.ocp4.example.com%2Foauth%2Ftoken%2Fimplicit&response_type=code
+I0428 03:19:49.455798    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.455860    2496 round_trippers.go:473]     X-Csrf-Token: 1
+I0428 03:19:49.485235    2496 round_trippers.go:574] Response Status: 401 Unauthorized in 29 milliseconds
+I0428 03:19:49.485312    2496 round_trippers.go:463] GET https://oauth-openshift.apps.ocp4.example.com/oauth/authorize?client_id=openshift-challenging-client&code_challenge=95PWiOsL3yGtVgAsQ3Tev00_UaVw4zmM3VWBjYV2h98&code_challenge_method=S256&redirect_uri=https%3A%2F%2Foauth-openshift.apps.ocp4.example.com%2Foauth%2Ftoken%2Fimplicit&response_type=code
+I0428 03:19:49.485339    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.485354    2496 round_trippers.go:473]     Authorization: Basic <masked>
+I0428 03:19:49.485364    2496 round_trippers.go:473]     X-Csrf-Token: 1
+I0428 03:19:49.600529    2496 round_trippers.go:574] Response Status: 302 Found in 115 milliseconds
+I0428 03:19:49.600631    2496 round_trippers.go:463] POST https://oauth-openshift.apps.ocp4.example.com/oauth/token
+I0428 03:19:49.600644    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.600658    2496 round_trippers.go:473]     Accept: application/json
+I0428 03:19:49.600670    2496 round_trippers.go:473]     Authorization: Basic <masked>
+I0428 03:19:49.600681    2496 round_trippers.go:473]     Content-Type: application/x-www-form-urlencoded
+I0428 03:19:49.650358    2496 round_trippers.go:574] Response Status: 200 OK in 49 milliseconds
+I0428 03:19:49.650726    2496 round_trippers.go:463] GET https://api.ocp4.example.com:6443/apis/user.openshift.io/v1/users/~
+I0428 03:19:49.650756    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.650764    2496 round_trippers.go:473]     Accept: application/json, */*
+I0428 03:19:49.650778    2496 round_trippers.go:473]     User-Agent: oc/4.14.0 (linux/amd64) kubernetes/9b1e0d2
+I0428 03:19:49.650789    2496 round_trippers.go:473]     Authorization: Bearer <masked>
+I0428 03:19:49.679736    2496 round_trippers.go:574] Response Status: 200 OK in 28 milliseconds
+Login successful.
+
+I0428 03:19:49.680052    2496 round_trippers.go:463] GET https://api.ocp4.example.com:6443/apis/project.openshift.io/v1/projects
+I0428 03:19:49.680064    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.680077    2496 round_trippers.go:473]     Accept: application/json, */*
+I0428 03:19:49.680094    2496 round_trippers.go:473]     Authorization: Bearer <masked>
+I0428 03:19:49.680106    2496 round_trippers.go:473]     User-Agent: oc/4.14.0 (linux/amd64) kubernetes/9b1e0d2
+I0428 03:19:49.688515    2496 round_trippers.go:574] Response Status: 200 OK in 8 milliseconds
+I0428 03:19:49.696140    2496 round_trippers.go:463] GET https://api.ocp4.example.com:6443/apis/project.openshift.io/v1/projects/openshift-operators-redhat
+I0428 03:19:49.696197    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.696213    2496 round_trippers.go:473]     Accept: application/json, */*
+I0428 03:19:49.696225    2496 round_trippers.go:473]     User-Agent: oc/4.14.0 (linux/amd64) kubernetes/9b1e0d2
+I0428 03:19:49.696239    2496 round_trippers.go:473]     Authorization: Bearer <masked>
+I0428 03:19:49.705681    2496 round_trippers.go:574] Response Status: 200 OK in 9 milliseconds
+You have access to 72 projects, the list has been suppressed. You can list all projects with 'oc projects'
+
+Using project "openshift-operators-redhat".
+I0428 03:19:49.718141    2496 round_trippers.go:463] GET https://api.ocp4.example.com:6443/api/v1/namespaces/openshift/configmaps/motd
+I0428 03:19:49.718212    2496 round_trippers.go:469] Request Headers:
+I0428 03:19:49.718232    2496 round_trippers.go:473]     Accept: application/json, */*
+I0428 03:19:49.718249    2496 round_trippers.go:473]     User-Agent: oc/4.14.0 (linux/amd64) kubernetes/9b1e0d2
+I0428 03:19:49.718281    2496 round_trippers.go:473]     Authorization: Bearer <masked>
+I0428 03:19:49.721287    2496 round_trippers.go:574] Response Status: 404 Not Found in 2 milliseconds
+I0428 03:19:49.723443    2496 loader.go:373] Config loaded from file:  /home/student/.kube/config
+I0428 03:19:49.724526    2496 loader.go:373] Config loaded from file:  /home/student/.kube/config
+I0428 03:19:49.726827    2496 loader.go:373] Config loaded from file:  /home/student/.kube/config
+I0428 03:19:49.729153    2496 loader.go:373] Config loaded from file:  /home/student/.kube/config
+[student@workstation ~]$ oc whoami 
+admin
+[student@workstation ~]$ 
+[student@workstation ~]$ oc get nodes 
+NAME       STATUS   ROLES                  AGE   VERSION
+master01   Ready    control-plane,master   94d   v1.27.6+b49f9d1
+master02   Ready    control-plane,master   94d   v1.27.6+b49f9d1
+master03   Ready    control-plane,master   94d   v1.27.6+b49f9d1
+worker01   Ready    worker                 75d   v1.27.6+b49f9d1
+worker02   Ready    worker                 75d   v1.27.6+b49f9d1
+worker03   Ready    worker                 75d   v1.27.6+b49f9d1
+[student@workstation ~]$ 
+[student@workstation ~]$ oc version 
+Client Version: 4.14.3
+Kustomize Version: v5.0.1
+Server Version: 4.14.3
+Kubernetes Version: v1.27.6+b49f9d1
+[student@workstation ~]$ 
+
+
